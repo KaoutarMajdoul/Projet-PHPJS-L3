@@ -16,7 +16,7 @@ test
 
 CONSIGNE :
 
-Le   projet   complet   consiste   en   la   création   d’une   application   web   permettant   la   publication d’événements culturels ou sportifs dans un département donné.
+<p>Le   projet   complet   consiste   en   la   création   d’une   application   web   permettant   la   publication d’événements culturels ou sportifs dans un département donné. </p>
 Base de données -éléments minimaux de modélisation:
   -Un rôle administrateur permet: de créer/supprimer des comptes contributeurs de créer/supprimer des thèmes
   -Un rôlecontributeur permet de créer/supprimer des événements qui présenteront au minimum les critères suivants: Une localisation (adresse + coordonnées GPS), un thème, une date, une descriptif, un effectif min/max (si pertinent)
