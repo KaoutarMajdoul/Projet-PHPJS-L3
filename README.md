@@ -1,7 +1,7 @@
 # Projet-PHPJS-L3
 Site web de gestion d'évènement en HTML/CSS, PHP et JavaScript.
 
-Lien sapiens : https://webpeda.etu.umontpellier.fr/e20160004213/Projet-PHPJS-L3/
+Lien sapiens : https://webpeda.etu.umontpellier.fr/e20160004213/Projet-PHPJS-L3-master/
 
 
 Compte utlisateur :
