@@ -1,7 +1,8 @@
 <?php 
 session_start();
-
+require("inc/db.php");
 include("inc/header.php")
+
 ?>
 <div class="container">
     <a href="gerer.php" class="btn btn-light mb-3"><< Retour</a>
@@ -37,9 +38,45 @@ include("inc/header.php")
                         <label for="adresse" class="col-form-label">Adresse</label>
                         <input type="text" class="form-control" id="adresse" name="adresse"  >
                     </div>
+
+
+
+
                     <div class="form-group col-md-10">
+                        
+                        <?php 
+
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $db = "projethlin510";
+
+                        // Create connection
+                        $con = mysqli_connect($servername, $username, $password,$db);
+
+                        // Check connection
+                        if (!$con) {
+                            die("Connection failed: " . mysqli_connect_error());
+                        }
+                        $theme="SELECT * FROM theme";
+                        $listeth=mysqli_query($con,$theme);
+                       
+                    ?>
+
+
                         <label for="theme" class="col-form-label">Thème</label>
-                        <input type="text" class="form-control" name="theme" id="theme" >
+                        <!-- <input type="text" class="form-control" name="theme" id="theme" > -->
+                        <select name="theme">
+                        <?php while ($row = mysqli_fetch_array($listeth)):?>
+
+                        <option value="<?php echo $row[0]; ?>"> 
+                        <?php echo $row[2]; ?>
+                     </option>
+                    <?php endwhile; ?>
+
+                        </select>
+            
+
                     </div>
                     <div class="form-group col-md-10">
                         <label for="nbPlaces" class="col-form-label">Nombre de places</label>
@@ -52,11 +89,11 @@ include("inc/header.php")
                 </div>
                 <div class="form-group">
                     <label for="dateDeb" class="col-form-label" >Date de début</label>
-                    <input type="text" class="form-control" name="dateDeb" id="dateDeb" placeholder="YYYY-MM-DD" >
+                    <input type="text" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" class="form-control" name="dateDeb" id="dateDeb" placeholder="YYYY-MM-DD" >
                 </div>
                 <div class="form-group">
                     <label for="dateFin" class="col-form-label" >Date de fin</label>
-                    <input type="text" class="form-control" name="dateFin" id="dateFin" placeholder="YYYY-MM-DD" >
+                    <input type="text" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" class="form-control" name="dateFin" id="dateFin" placeholder="YYYY-MM-DD" >
                 </div>
                 <div class="form-group">
                     <label for="lat" class="col-form-label">Latitude</label>
